@@ -6,7 +6,7 @@ using namespace std;
 class bad_length : public exception {
 public:
 	const char* what() const noexcept override {
-		return "Вы ввели слово запретной длины! До свидания!";
+		return "Р’С‹ РІРІРµР»Рё СЃР»РѕРІРѕ Р·Р°РїСЂРµС‚РЅРѕР№ РґР»РёРЅС‹! Р”Рѕ СЃРІРёРґР°РЅРёСЏ!";
 	}
 };
 
@@ -21,20 +21,20 @@ int function(string str, int forbidden_length) {
 int main() {
 	int forbidden_length;
 
-	cout << "Введите запретную длину: ";
+	cout << "Р’РІРµРґРёС‚Рµ Р·Р°РїСЂРµС‚РЅСѓСЋ РґР»РёРЅСѓ: ";
 	cin >> forbidden_length;
 
 	cin.ignore();
 	string word;
 
 	while (true) {
-		cout << "Введите слово: ";
+		cout << "Р’РІРµРґРёС‚Рµ СЃР»РѕРІРѕ: ";
 		getline(cin, word);
 
 
 		try {
 			int length = function(word, forbidden_length);
-			cout << "Длина слова \"" << word << "\" равна " << length << endl;
+			cout << "Р”Р»РёРЅР° СЃР»РѕРІР° \"" << word << "\" СЂР°РІРЅР° " << length << endl;
 		}
 
 		catch (const bad_length& e) {
